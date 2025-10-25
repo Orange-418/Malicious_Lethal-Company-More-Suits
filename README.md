@@ -1,23 +1,7 @@
-# More Suits
-### Adds more suits to choose from, and can be used as a library to load your own suits!
+# This is a fork of a (somewhat randomly chosen) lethal company mod. This is not a legitimate repository. Legitimate repository can be found here: https://github.com/x753/Lethal-Company-More-Suits
 
-## Instructions
-Place the ```x753-More_Suits-X.X.X``` folder in your ```BepInEx/Plugins``` folder. Make sure the ```moresuits``` folder is in the same folder as ```MoreSuits.dll```.
+This is just a simple 30 minute PoC I spun up to test how simple it is to smuggle malicious code into a popular game mod. As it turns out, it's incredibly simple, since the mods are just C# code after all. It is very very crude, but worked great. One may simply fling whatever additional code they want executed into the source, and then compile.
 
-## Config File
-After launching the game with the mod once, a config file is generated. In this file you can disable individual suits from being loaded, as well as ignore any ```!less-suits.txt``` file and attempt to load all suits (which is useful if you have another mod that helps manage lots of suits).
+Many people grab mods by simply downloading the dll, throwing it into their BepinEx folder, and running the game. In this case, doing so executes an initial stage to pull down and execute a sliver beacon.
 
-## Customize
-You can add .png files to the ```moresuits``` folder to add new suits as long as both the host and clients have the same files.
-
-## Advanced
-You can add a .json file in the ```advanced``` folder with the same name as your .png file in the ```moresuits``` folder to enable additional features like emission. Place additional texture maps in the ```advanced``` folder.
-
-For a list of supported features, see:
-https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Lit-Shader.html
-
-## Add Suits to Store
-Add a "PRICE" key to your advanced .json to put a suit in the store rotation. See ```Glow.json``` for an example of adding a suit with emission that must be purchased from the store. If you want to set a custom price for a suit from another mod in your modpack, create a new .json in the BepInEx/config/MoreSuitsConfig folder.
-
-## Making your own More Suits mod
-Upload your own package with a ```BepInEx/plugins/moresuits``` folder in it (do not include the MoreSuits.dll file) and add ```x753-More_Suits-1.5.1``` as a dependency, and this mod will automatically load your .png files as suits. If you don't want some or all of the suits that originally come with my mod, adjust the config file ```BepInEx\config\x753.More_Suits.cfg```. Include a ```!less-suits.txt``` file in your ```moresuits``` folder to disable all the default suits that come with this mod.
+This repository is disarmed, and only contains the stub pointing at localhost. A simple b64 encoded fetch/iex command.
